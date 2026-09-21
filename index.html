@@ -329,6 +329,38 @@
       </div>
     </div>
 
+     <!-- Project 7 -->
+    <div class="project-row" data-open="false">
+      <button class="project-summary" aria-expanded="false">
+        <span class="p-idx">07</span>
+        <span class="p-main">
+          <span class="p-tag">Machine Learning · Classification</span>
+          <span class="p-title">Credit Card Fraud Detection</span>
+          <span class="p-blurb">Fraud is only 0.17% of transactions, so a 99.8% accurate model can still catch nothing — evaluated with AUPRC instead.</span>
+        </span>
+        <span class="p-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="p-stat-row">
+            <div class="p-stat"><span class="v">227,845</span><span class="l">training transactions (417 fraud)</span></div>
+            <div class="p-stat"><span class="v">56,962</span><span class="l">test transactions (75 fraud)</span></div>
+            <div class="p-stat"><span class="v">0.82</span><span class="l">Random Forest AUPRC — best</span></div>
+            <div class="p-stat"><span class="v">0.76</span><span class="l">Logistic Regression baseline AUPRC</span></div>
+          </div>
+          <div class="p-findings">
+            <div class="p-finding"><span><strong>Tree models beat the baseline:</strong> Random Forest reached 0.82 AUPRC with only 4 false alarms, while the Logistic Regression baseline flagged 1,473 normal transactions to catch 68 of 75 frauds.</span></div>
+            <div class="p-finding"><span><strong>SMOTE didn't help</strong> beyond class weighting — XGBoost scored the same with and without it (0.79 AUPRC), so the simpler approach was kept.</span></div>
+            <div class="p-finding"><span><strong>Evaluated like real deployment:</strong> trained on earlier transactions, tested on later ones, with a cost-based decision threshold cutting simulated losses by ~65% versus having no model.</span></div>
+          </div>
+          <div class="p-footer">
+            <span class="p-tools mono">Python · scikit-learn · XGBoost · SMOTE · SHAP</span>
+            <a class="p-link" href="https://github.com/Iccafw" target="_blank" rel="noopener">GitHub profile ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>
 
