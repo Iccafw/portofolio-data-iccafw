@@ -302,9 +302,9 @@
       <button class="project-summary" aria-expanded="false">
         <span class="p-idx">06</span>
         <span class="p-main">
-          <span class="p-tag">Deep Learning · CNN</span>
+          <span class="p-tag">Deep Learning · CNN & Transfer Learning</span>
           <span class="p-title">Gender Prediction from Facial Images</span>
-          <span class="p-blurb">Two CNN architectures, head to head — and a lesson that a bigger network isn't automatically a better one.</span>
+          <span class="p-blurb">Two custom CNNs and a MobileNetV2 transfer-learning model, compared head to head — then wrapped in a live web app that detects a face in an uploaded photo and predicts its gender in real time.</span>
         </span>
         <span class="p-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
@@ -313,16 +313,16 @@
           <div class="p-stat-row">
             <div class="p-stat"><span class="v">47,009</span><span class="l">training images, 48×48 grayscale</span></div>
             <div class="p-stat"><span class="v">11,649</span><span class="l">validation images</span></div>
-            <div class="p-stat"><span class="v">94.4%</span><span class="l">Model 1 (smaller) accuracy — best</span></div>
-            <div class="p-stat"><span class="v">93.0%</span><span class="l">Model 2 (larger) accuracy</span></div>
+            <div class="p-stat"><span class="v">94.4%</span><span class="l">best custom CNN validation accuracy</span></div>
+            <div class="p-stat"><span class="v">3</span><span class="l">architectures compared: 2 custom CNNs + MobileNetV2</span></div>
           </div>
           <div class="p-findings">
-            <div class="p-finding"><span><strong>The smaller model won:</strong> a 32/64-filter CNN reached 94.4% validation accuracy with fewer false positives and false negatives than a larger 64/128-filter version (93.0%).</span></div>
-            <div class="p-finding"><span><strong>More capacity didn't help</strong> at this input resolution (48×48px) — the larger model was likely more prone to overfitting rather than better generalization.</span></div>
-            <div class="p-finding"><span><strong>Data augmentation worked as intended:</strong> validation accuracy tracked training accuracy closely in both models, a sign of healthy generalization rather than memorization.</span></div>
+            <div class="p-finding"><span><strong>The smaller model still won:</strong> a 32/64-filter CNN reached 94.4% validation accuracy with fewer false positives and false negatives than a larger 64/128-filter version (93.0%).</span></div>
+            <div class="p-finding"><span><strong>Added a transfer-learning baseline:</strong> a pretrained MobileNetV2 head was trained alongside the two custom CNNs to see whether pretrained ImageNet features generalize better than training from scratch on small grayscale faces.</span></div>
+            <div class="p-finding"><span><strong>Turned it into a usable demo:</strong> Haar Cascade face detection crops the subject automatically, Grad-CAM shows which facial regions drove the prediction, and the whole pipeline is exposed as an interactive Streamlit app for uploading a photo and getting an instant prediction.</span></div>
           </div>
           <div class="p-footer">
-            <span class="p-tools mono">Python · TensorFlow/Keras · image augmentation</span>
+            <span class="p-tools mono">Python · TensorFlow/Keras · OpenCV · Streamlit · Grad-CAM · image augmentation</span>
             <a class="p-link" href="https://github.com/Iccafw" target="_blank" rel="noopener">GitHub profile ↗</a>
           </div>
         </div>
