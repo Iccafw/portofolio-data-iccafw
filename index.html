@@ -248,14 +248,14 @@
             <div class="p-stat"><span class="v">89,741</span><span class="l">songs, cleaned from 114K</span></div>
             <div class="p-stat"><span class="v">k = 3</span><span class="l">optimal clusters (silhouette 0.38)</span></div>
             <div class="p-stat"><span class="v">72.9%</span><span class="l">low-energy cluster → Depression</span></div>
-            <div class="p-stat"><span class="v">21.4%</span><span class="l">pseudo R² (McFadden)</span></div>
+            <div class="p-stat"><span class="v">21.4%</span><span class="l">pseudo R² (McFadden, 3-class model)</span></div>
           </div>
           <p style="color:var(--ink-soft);margin-bottom:22px;">My undergraduate thesis. Genre-based music organization isn't emotionally specific, and Spotify's perceptual features are black-box and access-limited — so this study tests whether two purely physical, self-computable features (Loudness in dB, Tempo in BPM) can predict emotion on their own.</p>
           <div class="p-findings">
             <div class="p-finding"><span><strong>Three natural clusters emerged:</strong> High Intensity (−6.6dB, 151 BPM), Low Intensity (−19.4dB, 104 BPM), and Moderate (−7.3dB, 104 BPM), confirmed by both the Elbow method and silhouette score.</span></div>
             <div class="p-finding"><span><strong>A strong, linear match on the low-energy end:</strong> the Low Intensity cluster maps to Depression 72.9% of the time — quiet, slow songs reliably read as sad (χ² = 23,458.82, p &lt; 0.001).</span></div>
             <div class="p-finding"><span><strong>A partial match on the high-energy end:</strong> High and Moderate clusters split between Exuberance and Anxious — Loudness and Tempo predict Arousal well, but can't distinguish positive from negative emotion (Valence) on their own.</span></div>
-            <div class="p-finding"><span><strong>Loudness dominates as a predictor:</strong> in the multinomial logistic regression, Loudness's Wald statistic (W² = 15,340) dwarfs Tempo's (W² = 682) — both significant, but Loudness carries far more weight.</span></div>
+            <div class="p-finding"><span><strong>Loudness dominates as a predictor:</strong> in the multinomial logistic regression, Loudness's Wald statistic (W² = 15,340) dwarfs Tempo's (W² = 682). Contentment overlapped too heavily with Depression to be predicted at all, so dropping it lifted accuracy from 48.3% to 52.5%.</span></div>
           </div>
           <div class="p-footer">
             <span class="p-tools mono">Python · pandas · scikit-learn · statsmodels (MNLogit) · matplotlib · seaborn</span>
